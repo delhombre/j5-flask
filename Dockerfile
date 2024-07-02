@@ -10,6 +10,6 @@ RUN apt-get update && apt-get install -y \
     git \
     htop
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install --break-system-packages -r requirements.txt
 
 ENTRYPOINT [ "/usr/local/bin/gunicorn", "-b", "0.0.0.0:5000", "hello:app"]
